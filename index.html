@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/4374c3e152.js"></script>
+    <title>Allocation Calculator</title>
+    <!-- DATE STARTED 6 JULY @ 1630
+    FIRST BREAK @ 1214 AM -->
+  </head>
+  <body>
+        
+      <div class="container">
+
+            <div class="page_header" >
+                <div class="d-flex justify-content-center" >
+                    <h1> Allocation Calculator</h1>
+                </div>
+            </div>
+
+            <div class="row">
+
+               <div class="col">
+                   <h4>Income</h4>
+                   <div id = 'income'class="header_open rounded-lg" >
+                       <div class="row" style='padding:0px 15px;'><b>$<span id = 'revenue'class= 'revenue' type='number'>0</b></span></div>
+                       <div class="row " style='padding:15px 15px;'><span class = 'subheading'>Real Revenue</span> </div>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label class = 'label' for="formGroupExampleInput"><strong>INCOME RECEIVED</strong></label>
+                            <input id = 'user_income'  type="number" class="form-control form-control-lg  border border-info clearFields" id="formGroupExampleInput" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label  class = 'label' for="formGroupExampleInput2"><b>LESS MATS & SUBS</b></label>
+                            <input id = 'expenses' type="number" class="form-control form-control-lg border border-info clearFields" id="formGroupExampleInput2" placeholder="0">
+                            <label for="formGroupExampleInput2">(Materials & Subcontractors)</label>
+                        </div>
+                    </form>
+               </div>
+               
+              
+               <div class="col">
+                   <h4>Allocations</h4>
+                   <div id= 'allocations' class="header_open rounded-lg">
+                        <div class="row" style='padding:0px 15px;'>
+                            <span class= 'revenue' type='number'><b><span id = 'rev_percentage'>100</span>%</b></span>
+                        </div>
+                       <div id = 'remaining_al' class="row " type='text' style='padding:15px 15px;'>Remaining</div>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label class = 'label' for="formGroupExampleInput"><strong>PROFIT %</strong></label>
+                            <input id = 'profit_percentage' type="number" class="form-control form-control-lg border border-info clearFields" id="formGroupExampleInput" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label class = 'label' for="formGroupExampleInput"><strong>OWNERS PAY %</strong></label>
+                            <input id = 'owner_percentage' type="number" class="form-control form-control-lg border border-info clearFields" id="formGroupExampleInput" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label class = 'label' for="formGroupExampleInput"><strong>TAX %</strong></label>
+                            <input id = 'tax_percentage' type="number" class="form-control form-control-lg border border-info clearFields" id="formGroupExampleInput" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label class = 'label' for="formGroupExampleInput"><strong>OPERATING EXPENSES %</strong></label>
+                            <input id = 'expense_percentage' type="number" class="form-control form-control-lg border border-info clearFields" id="formGroupExampleInput" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label class = 'label' for="formGroupExampleInput2"><b>IF IN DOUBT... %</b></label>
+                            <input id = 'doubt_percentage' type="number" class="form-control form-control-lg border border-info clearFields" id="formGroupExampleInput2" placeholder="0">
+                        </div>
+                    </form>
+               </div>
+               
+              
+               <div class="col">
+                   <h4>Results</h4>
+                   <div id = 'results' class="header_open rounded-lg" >
+                       <div class="row" style='padding:0px 15px;'><b>$<span id = 'results_amount' class= 'revenue'>0</b></span></div>
+                       <div class="row " style='padding:15px 15px;'><span id = 'remaining_res'class = 'subheading'>Remaining</span> </div>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <div class='res font-weight-bolder'><b>$</b><span id = 'r_profit'><b>0</b></span></div>
+                            <label class = 'label' for="formGroupExampleInput">Into 'Profit' Account</label>
+                        </div>
+                        <div class="form-group">
+                            <div class='res font-weight-bolder'><b>$</b><span id = 'r_owner'><b>0</b></span></div>
+                            <label class = 'label' for="formGroupExampleInput">Into 'Owners Pay' Account</label>
+                        </div>
+                        <div class="form-group">
+                            <div class='res font-weight-bolder'><b>$</b><span id= 'r_tax'><b>0</b></span></div>
+                            <label class = 'label' for="formGroupExampleInput">Into 'Tax' Account</label>
+                        </div>
+                        <div class="form-group">
+                            <div class='res font-weight-bolder'><b>$</b><span id='r_exp'><b>0</b></span></div>
+                            <label class = 'label' for="formGroupExampleInput2">Into 'Operating Expenses' Account</label>
+                        </div>
+                        <div class="form-group">
+                            <div class='res font-weight-bolder'><b>$</b><span id='r_doubt'><b>0</b></span></div>
+                            <label class = 'label' for="formGroupExampleInput2">Into 'If in Doubt' Account</label>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-info btn-lg btn-block" onclick='reset()'><i class="fas fa-sync"></i>  RESET</button>
+                 <p> Created by UreaLaden at <a href="https://pytechcoding.com">PyTechCoding<a/>
+                </div>
+            
+            </div>
+            
+      </div>
+   
+    <script  src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
